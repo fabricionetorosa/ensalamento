@@ -84,7 +84,7 @@ exports.atualizarCerveja = (req, res) => {
     )
 }
 
-exports.excluirCerveja = (req, res) => {
+exports.excluirAluno = (req, res) => {
     const idDoPostman = req.params.id;
     const comando = `DELETE FROM ALUNOS WHERE id = $1;`
     const valoresDoComando = [idDoPostman]

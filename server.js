@@ -7,6 +7,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use("/aluno", rotasAluno);
 app.use("/materia", rotasMateria);
+app.use("/professor", rotasProfessor);
 
 app.listen(3000, () => {
     console.log("Servidor rodando na porta 3000")

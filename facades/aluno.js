@@ -7,13 +7,13 @@ export default class CervejaFacade {
     }
 
     async conectarDatabase() {
-        this.client = new pg.Client("URL")
+        this.client = new pg.Client("postgres://lwvnzbqu:3aDW8WWqSHfz2EcJdLBteLgScDThAXlt@silly.db.elephantsql.com/lwvnzbqu")
         await this.client.connect()
     }
 
-    async buscarCervejaPeloNome(nome) {
+    async buscarAlunoPeloNome(nome) {
         try {
-            const comando = `SELECT * FROM CERVEJAS WHERE LOWER(NOME) = LOWER('${nome}')`
+            const comando = `SELECT * FROM alunos WHERE LOWER(NOME) = LOWER('${nome}')`
             const resultado = await this.client.query(comando)
             return resultado.rows
         } catch (erro) {

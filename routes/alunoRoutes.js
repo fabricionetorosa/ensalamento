@@ -10,7 +10,6 @@ router.get("/aluno-pelo-nome/:aluno", controller.buscarAluno);
 router.get("/aluno-ordenadas", controller.buscarAlunoOrdenadas);
 router.get("/aluno-aproximada/:aluno", controller.buscarAlunoAproximada);
 router.post("/cadastrar-aluno/", controller.cadastrarAluno);
-router.put("/atualizar-aluno/:id", controller.atualizarAluno);
 router.delete("/excluir-aluno/:id", controller.excluirAluno);
 
 module.exports = router;

@@ -5,7 +5,7 @@ exports.buscarMateria = (req, res) => {
 
     const materiaDoPostman = req.params.materia;
 
-    const comando = `SELECT * FROM MATERIAS
+    const comando = `SELECT * FROM materia_aula
     WHERE LOWER(NOME) = LOWER('${materiaDoPostman}')`
 
     database.query(comando).then(
@@ -20,7 +20,7 @@ exports.buscarMateria = (req, res) => {
 
 exports.buscarCervejasOrdenadas =  (req, res) => {
 
-    const comando = `SELECT * FROM MATERIAS ORDER BY fase`
+    const comando = `SELECT * FROM materia_aula ORDER BY fase`
 
     database.query(comando).then(
         (resultado) => {
@@ -37,7 +37,7 @@ exports.buscarMateriaAproximada = (req, res) => {
 
     const materiaDoPostman = req.params.materia;
 
-    const comando = `SELECT * FROM MATERIAS
+    const comando = `SELECT * FROM materia_aula
     WHERE LOWER(NOME) LIKE LOWER('%${materiaDoPostman}%')`
 
     database.query(comando).then(
@@ -53,7 +53,7 @@ exports.buscarMateriaAproximada = (req, res) => {
 exports.cadastrarMateria = (req, res) => {
     const nomeDoPostman = req.body.nome;
     const faseDoPostman = req.body.fase;
-    const comando = `INSERT INTO cervejas (nome,  fase) VALUES
+    const comando = `INSERT INTO materia_aula (nome,  fase) VALUES
     ($1, $2);`
     const valoresDoComando = [nomeDoPostman, faseDoPostman]
     database.query(comando, valoresDoComando).then(
@@ -69,7 +69,7 @@ exports.cadastrarMateria = (req, res) => {
 
 exports.excluirMateria = (req, res) => {
     const idDoPostman = req.params.id;
-    const comando = `DELETE FROM MATERIAS WHERE id = $1;`
+    const comando = `DELETE FROM materia_aula WHERE id = $1;`
     const valoresDoComando = [idDoPostman]
     database.query(comando, valoresDoComando).then(
         () => {
