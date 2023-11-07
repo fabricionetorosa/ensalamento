@@ -2,6 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const rotasAluno = require("./routes/alunoRoutes");
 const rotasMateria = require("./routes/materiaRoutes");
+const rotasProfessor = require("./routes/professorRoutes");
+
 
 const app = express();
 app.use(bodyParser.json());

@@ -1,4 +1,4 @@
-// Arquivo responsável por conectar com o banco de dados
+
 const database = require("../database")
 
 exports.buscarMateria = (req, res) => {
@@ -18,7 +18,7 @@ exports.buscarMateria = (req, res) => {
     )
 }
 
-exports.buscarCervejasOrdenadas =  (req, res) => {
+exports.buscarMateriaOrdenadas =  (req, res) => {
 
     const comando = `SELECT * FROM materia_aula ORDER BY fase`
 
